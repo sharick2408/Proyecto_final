@@ -14,61 +14,62 @@ $usuario = array();
 echo "El último usuario que se registró en nuestro sistema es: " . $usuario_mostrar . "\n\n";
 
 
-
-$respuesta = strtolower(readline("¿Este es tu nombre verdadero? Responde con si o no: "));
-
-
-if ($respuesta == 'si') {
-    echo "\n¡Perfecto! Hemos confirmado tu nombre: " . $usuario_mostrar . "\n";
-    echo "Procederemos con la confirmación de tu reservación :D!\n";
-} else {
-
-    $nombre_correcto = readline("\nPor favor ingresa el nombre con el que te registraste: ");
-
-    array_push($usuario, $nombre_correcto);
-    
-    echo "\n¡Gracias por la corrección!\n";
-    echo "Hemos actualizado tu nombre a: " . $nombre_correcto . "\n";
-    echo "Procederemos con la confirmación de tu reservación :D!\n";
-}    
-    
-    echo "En base al usuario escogido, el día de reservación escogido en la llamada fue: \n\n";
+    echo "En base al usuario escogido, el día de reservación elegido en la llamada fue: \n";
 	
 	$dia = 4;
 	switch ($dia) {
 	  
 	 case 1:
-	    echo "Escogiste el Lunes";
+	    echo "Lunes \n\n";
 	    break;
 	    
 	 case 2:
-	    echo "Escogiste el Martes";
+	    echo "Martes \n\n";
 	    break;
 	    
    case 3:
-	    echo "Escogiste el Miercoles";
+	    echo "Miércoles \n\n";
 	    break;
 	    
    case 4:
-	    echo "Escogiste el Jueves";
+	    echo "Jueves \n\n";
 	    break;
 	    
 	 case 5:
-	    echo "Escogiste el Viernes";
+	    echo "Viernes \n\n";
 	    break;
 	    
 	 case 6:
-	    echo "Escogiste el Sábado";
+	    echo "Sábado \n\n";
 	    break;
 	    
 	 case 7:
-	    echo "Escogiste el Domingo";
+	    echo "Domingo \n\n";
 	    break;
 	    
 	 default:
-	    echo "El número que escojiste es invalido, por favor digita un número del 1 al 7 (-v-)/";
+	    echo "El número que escojiste es invalido, por favor digita un número del 1 al 7 (-v-)/ \n\n";
 	    break;
 	}
 	
+	$dia_inicio = 4; 
 	
-	?>
+$dias_semana = ["Lunes 26 de Mayo", "Martes 27 de Mayo", "Miércoles 28 de Mayo", "Jueves 29 de Mayo", "Viernes 30 de Mayo", "Sábado 31 de Mayo", "Domingo 1 de Mayo"];
+
+echo "De acuerdo a los datos del sistema, usted reservó estadía durante estos días: \n";
+
+for ($i = 0; $i < 3; $i++) {
+    $dia_actual = ($dia_inicio + $i - 1) % 7; 
+    echo "Día " . ($i + 1) . ": " . $dias_semana[$dia_actual] . " (Noche " . ($i + 1) . ")\n";
+}
+
+
+if ($dias_semana = "Sábado 31 de Mayo") {
+    echo "Para terminar con tu proceso, ¡Te invitamos este sábado 31 de mayo a nuestro banquete en el Hotel para que puedas comer todo lo que puedas! \n";
+} else {
+    echo "Gracias por la reservación, te avisaremos si habrá algún evento especial mientras te encuentras en nuestro hotel :)";
+}
+
+echo "\n¡Listo! Muchas gracias por tenernos en cuenta para que puedas pasar tu estadía en la comodidad de nuestro hotel.\nCualquier inconveniente que tengas puedes solucionarlo con nuestros asesores <(*V*)> \n";
+
+?>
