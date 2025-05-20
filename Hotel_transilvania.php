@@ -52,22 +52,24 @@ echo "El último usuario que se registró en nuestro sistema es: " . $usuario_mo
 	    break;
 	}
 	
-	$dia_inicio = 4; 
+	$dia_inicio = 3; 
 	
 $dias_semana = ["Lunes 26 de Mayo", "Martes 27 de Mayo", "Miércoles 28 de Mayo", "Jueves 29 de Mayo", "Viernes 30 de Mayo", "Sábado 31 de Mayo", "Domingo 1 de Mayo"];
 
 echo "De acuerdo a los datos del sistema, usted reservó estadía durante estos días: \n";
 
+$dias_reservados = [];
+
 for ($i = 0; $i < 3; $i++) {
-    $dia_actual = ($dia_inicio + $i - 1) % 7; 
-    echo "Día " . ($i + 1) . ": " . $dias_semana[$dia_actual] . " (Noche " . ($i + 1) . ")\n";
+    $dia_actual = ($dia_inicio + $i); 
+    $dias_reservados = $dias_semana[$dia_actual];
+    echo "Día " . ($i + 1) . ": " . $dias_reservados . " (Noche " . ($i + 1) . ")\n";
 }
 
-
-if ($dias_semana = "Sábado 31 de Mayo") {
-    echo "Para terminar con tu proceso, ¡Te invitamos este sábado 31 de mayo a nuestro banquete en el Hotel para que puedas comer todo lo que puedas! \n";
+if ($dias_reservados == "Sábado 31 de Mayo") {
+    echo "\nPara terminar con tu proceso, ¡Te invitamos este sábado 31 de mayo a nuestro banquete en el Hotel para que puedas comer todo lo que puedas! \n";
 } else {
-    echo "Gracias por la reservación, te avisaremos si habrá algún evento especial mientras te encuentras en nuestro hotel :)";
+    echo "\nGracias por la reservación, te avisaremos si habrá algún evento especial mientras te encuentras en nuestro hotel :)\n";
 }
 
 echo "\n¡Listo! Muchas gracias por tenernos en cuenta para que puedas pasar tu estadía en la comodidad de nuestro hotel.\nCualquier inconveniente que tengas puedes solucionarlo con nuestros asesores <(*V*)> \n";
